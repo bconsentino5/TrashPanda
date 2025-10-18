@@ -94,9 +94,6 @@ script = ExtResource("2_oansn")
 sprite = NodePath("../Sprite2D")
 speaker = NodePath("../AudioStreamPlayer")
 debug = true
-enable_sound = true
-enable_animation = true
-enable_particals = true
 move_sound = ExtResource("3_1qpp8")
 jump_sound = ExtResource("4_nd6ml")
 land_sound = ExtResource("5_y01d7")
@@ -111,13 +108,6 @@ idle_partical = NodePath("../Particals/Idle")
 [node name="MovementController" type="Node" parent="." node_paths=PackedStringArray("c_body")]
 script = ExtResource("3_cac6a")
 c_body = NodePath("..")
-move_speed = 600.0
-gravity = 35.0
-jump_force = 700.0
-jump_queue_length_msec = 200
-coyote_time_length_msec = 50
-fall_gravity_mult = 1.5
-dash_force = 1000.0
 metadata/_custom_type_script = "uid://b0hot2esg3sgb"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
