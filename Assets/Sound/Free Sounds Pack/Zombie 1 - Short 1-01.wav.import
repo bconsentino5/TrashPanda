@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bucg5cd0cy6lf"
+path="res://.godot/imported/Zombie 1 - Short 1-01.wav-7fa6e42ba34dd28f984d14a650b378e9.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Free Sounds Pack/Zombie 1 - Short 1-01.wav"
+dest_files=["res://.godot/imported/Zombie 1 - Short 1-01.wav-7fa6e42ba34dd28f984d14a650b378e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

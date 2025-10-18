@@ -1,0 +1,144 @@
+[gd_scene load_steps=23 format=3 uid="uid://bl6wh4amp8ljg"]
+
+[ext_resource type="Script" uid="uid://c1kret0ix6iht" path="res://Objects/Player/Player.gd" id="1_we6tp"]
+[ext_resource type="Script" uid="uid://br1vs868dmesp" path="res://Objects/Player/Effects.gd" id="2_oansn"]
+[ext_resource type="AudioStream" uid="uid://cjqjefwa174pl" path="res://Assets/Sound/Essentials_Series_NOX_SOUND/Footsteps_Essentials_NOX_SOUND/Footsteps_Gravel/Footsteps_Gravel_Run/Footsteps_Gravel_Run_01.wav" id="3_1qpp8"]
+[ext_resource type="Script" uid="uid://b0hot2esg3sgb" path="res://Objects/Player/MovementController.gd" id="3_cac6a"]
+[ext_resource type="AudioStream" uid="uid://c802fgiic6hd" path="res://Assets/Sound/Essentials_Series_NOX_SOUND/Footsteps_Essentials_NOX_SOUND/Footsteps_Wood/Footsteps_Wood_Jump/Footsteps_Wood_Jump_Start_02.wav" id="4_nd6ml"]
+[ext_resource type="AudioStream" uid="uid://bqd30jgoolb0n" path="res://Assets/Sound/Essentials_Series_NOX_SOUND/Footsteps_Essentials_NOX_SOUND/Footsteps_Wood/Footsteps_Wood_Jump/Footsteps_Wood_Jump_Land_01.wav" id="5_y01d7"]
+[ext_resource type="AudioStream" uid="uid://d3ogp3a34ckpm" path="res://Assets/Sound/Free Sounds Pack/Whoosh 1-1.wav" id="6_nd6ml"]
+[ext_resource type="Script" uid="uid://byqix2nl7u2m" path="res://Objects/Player/Animation.gd" id="7_y01d7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_we6tp"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_oansn"]
+colors = PackedColorArray(0.956863, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cac6a"]
+gradient = SubResource("Gradient_oansn")
+width = 32
+height = 32
+
+[sub_resource type="Curve" id="Curve_7t0p5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.495409, 0.833232), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_7t0p5"]
+script = ExtResource("7_y01d7")
+loop = true
+duration = 0.0
+x_scale = SubResource("Curve_7t0p5")
+metadata/_custom_type_script = "uid://byqix2nl7u2m"
+
+[sub_resource type="Curve" id="Curve_1ggq4"]
+_data = [Vector2(0, 1), 0.0, -0.528303, 0, 0, Vector2(1, 0.777155), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_q10m3"]
+script = ExtResource("7_y01d7")
+loop = false
+duration = 0.0
+y_scale = SubResource("Curve_1ggq4")
+metadata/_custom_type_script = "uid://byqix2nl7u2m"
+
+[sub_resource type="Curve" id="Curve_y01d7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.242779, 0.495756), 0.0, 0.0, 0, 0, Vector2(0.455755, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ebgc0"]
+_data = [Vector2(0.468937, 1), 0.0, 0.0, 0, 0, Vector2(0.729286, 0.50843), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_y01d7"]
+script = ExtResource("7_y01d7")
+loop = false
+duration = 0.0
+x_scale = SubResource("Curve_y01d7")
+y_scale = SubResource("Curve_ebgc0")
+metadata/_custom_type_script = "uid://byqix2nl7u2m"
+
+[sub_resource type="Curve" id="Curve_q10m3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.167082, 0.49972), 0.0, 0.0, 0, 0, Vector2(0.247557, 1), 0.0, 0.0, 0, 0, Vector2(0.398531, 0.815493), 0.0, 0.0, 0, 0, Vector2(0.498226, 1), 0.0, 0.0, 0, 0, Vector2(0.613546, 0.890412), 0.0, 0.0, 0, 0, Vector2(0.702798, 1), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="Resource" id="Resource_ufaat"]
+script = ExtResource("7_y01d7")
+loop = false
+duration = 0.0
+y_scale = SubResource("Curve_q10m3")
+metadata/_custom_type_script = "uid://byqix2nl7u2m"
+
+[sub_resource type="Curve" id="Curve_ufaat"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.179594, 0.316111), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_8ngx6"]
+script = ExtResource("7_y01d7")
+loop = false
+duration = 0.0
+y_scale = SubResource("Curve_ufaat")
+metadata/_custom_type_script = "uid://byqix2nl7u2m"
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_we6tp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_we6tp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_cac6a")
+
+[node name="Effects" type="Node" parent="." node_paths=PackedStringArray("sprite", "speaker", "idle_partical")]
+script = ExtResource("2_oansn")
+sprite = NodePath("../Sprite2D")
+speaker = NodePath("../AudioStreamPlayer")
+debug = true
+enable_sound = true
+enable_animation = true
+enable_particals = true
+move_sound = ExtResource("3_1qpp8")
+jump_sound = ExtResource("4_nd6ml")
+land_sound = ExtResource("5_y01d7")
+dash_sound = ExtResource("6_nd6ml")
+idle_anim = SubResource("Resource_7t0p5")
+move_anim = SubResource("Resource_q10m3")
+jump_anim = SubResource("Resource_y01d7")
+land_anim = SubResource("Resource_ufaat")
+dash_anim = SubResource("Resource_8ngx6")
+idle_partical = NodePath("../Particals/Idle")
+
+[node name="MovementController" type="Node" parent="." node_paths=PackedStringArray("c_body")]
+script = ExtResource("3_cac6a")
+c_body = NodePath("..")
+move_speed = 600.0
+gravity = 35.0
+jump_force = 700.0
+jump_queue_length_msec = 200
+coyote_time_length_msec = 50
+fall_gravity_mult = 1.5
+dash_force = 1000.0
+metadata/_custom_type_script = "uid://b0hot2esg3sgb"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Particals" type="Node2D" parent="."]
+
+[node name="Idle" type="CPUParticles2D" parent="Particals"]
+direction = Vector2(0, 1)
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+
+[connection signal="_air_idle" from="MovementController" to="Effects" method="_air_idle"]
+[connection signal="_air_move" from="MovementController" to="Effects" method="_air_move"]
+[connection signal="_dash_begin" from="MovementController" to="Effects" method="_dash_begin"]
+[connection signal="_dash_end" from="MovementController" to="Effects" method="_dash_end"]
+[connection signal="_fall_idle" from="MovementController" to="Effects" method="_fall_idle"]
+[connection signal="_fall_move" from="MovementController" to="Effects" method="_fall_move"]
+[connection signal="_idle" from="MovementController" to="Effects" method="_idle"]
+[connection signal="_jump_idle" from="MovementController" to="Effects" method="_jump_idle"]
+[connection signal="_jump_move" from="MovementController" to="Effects" method="_jump_move"]
+[connection signal="_land" from="MovementController" to="Effects" method="_land"]
+[connection signal="_move" from="MovementController" to="Effects" method="_move"]
