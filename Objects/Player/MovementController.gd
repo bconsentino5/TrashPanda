@@ -63,6 +63,11 @@ func _physics_process(delta: float) -> void:
 
 func apply_movement():
 	c_body.velocity.x = move_dir.x * move_speed
+	#move left
+	if move_dir.x == -1:
+		print("left")
+		$Player/AnimatedSprite2D.animation = "left"
+		$Player/AnimatedSprite2D.play()
 
 func apply_jump():
 	c_body.velocity.y = -jump_force

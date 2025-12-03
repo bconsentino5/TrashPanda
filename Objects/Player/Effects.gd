@@ -1,6 +1,6 @@
 extends Node
 
-@export var sprite : Sprite2D
+@export var sprite : AnimatedSprite2D
 @export var speaker : AudioStreamPlayer
 @export var debug : bool
 
