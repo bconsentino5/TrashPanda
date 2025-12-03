@@ -1,19 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl6wh4amp8ljg"]
+[gd_scene load_steps=6 format=3 uid="uid://bl6wh4amp8ljg"]
 
 [ext_resource type="Script" uid="uid://c1kret0ix6iht" path="res://Objects/Player/Player.gd" id="1_we6tp"]
+[ext_resource type="Texture2D" uid="uid://d1527aa5dd5io" path="res://Assets/pixilart-sprite (3).png" id="2_b0me6"]
 [ext_resource type="Script" uid="uid://br1vs868dmesp" path="res://Objects/Player/Effects.gd" id="2_oansn"]
 [ext_resource type="Script" uid="uid://b0hot2esg3sgb" path="res://Objects/Player/MovementController.gd" id="3_cac6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_we6tp"]
 size = Vector2(32, 32)
-
-[sub_resource type="Gradient" id="Gradient_oansn"]
-colors = PackedColorArray(0.956863, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cac6a"]
-gradient = SubResource("Gradient_oansn")
-width = 32
-height = 32
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_we6tp")
@@ -22,7 +15,9 @@ script = ExtResource("1_we6tp")
 shape = SubResource("RectangleShape2D_we6tp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_cac6a")
+position = Vector2(-11, -3)
+scale = Vector2(1.80952, 1.80952)
+texture = ExtResource("2_b0me6")
 
 [node name="Effects" type="Node" parent="." node_paths=PackedStringArray("sprite", "speaker")]
 script = ExtResource("2_oansn")
@@ -38,7 +33,7 @@ gravity = 9.0
 jump_force = 800.0
 jump_queue_length_msec = 500
 coyote_time_length_msec = 500
-fall_gravity_mult = 1.5
+fall_gravity_mult = 5.0
 metadata/_custom_type_script = "uid://b0hot2esg3sgb"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
