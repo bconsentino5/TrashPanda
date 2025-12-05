@@ -13,6 +13,9 @@ signal _fall_move
 signal _land
 signal _dash_begin
 signal _dash_end
+signal anim_left
+signal anim_right
+signal anim_jump
 
 @export var c_body : CharacterBody2D
 
@@ -45,7 +48,7 @@ func _ready() -> void:
 	state_machine = StateMachine.create(self)
 	state_machine.add_state("Idle", idle_enter, null, idle_phys_process)
 	state_machine.add_state("Move", move_enter, null, move_phys_process, move_exit)
-	state_machine.add_state("Jump", jump_enter, null, null)
+	state_machine.add_state("Jump", jump_enter, null, move_exit)
 	state_machine.add_state("AirIdle", air_idle_enter, null, air_idle_phys_process)
 	state_machine.add_state("AirMove", air_move_enter, null, air_move_phys_process)
 	state_machine.add_state("FallIdle", fall_idle_enter, null, fall_idle_phys_process)
@@ -63,21 +66,24 @@ func _physics_process(delta: float) -> void:
 
 func apply_movement():
 	c_body.velocity.x = move_dir.x * move_speed
-	#move left
+	#animate left
 	if move_dir.x == -1:
-		print("left")
-		$Player/AnimatedSprite2D.animation = "left"
-		$Player/AnimatedSprite2D.play()
+		anim_left.emit()
+	#animate right
+	if move_dir.x == 1:
+		anim_right.emit()
 
 func apply_jump():
+	anim_jump.emit()
 	c_body.velocity.y = -jump_force
+	
 
 func apply_gravity(delta : float, gravity_scale := 1.0):
 	c_body.velocity.y += ((gravity * gravity_scale) * delta * Engine.physics_ticks_per_second)
 
 func idle_enter():
 	_idle.emit()
-
+	
 func idle_phys_process(delta : float):
 	if move_dir.x != 0:
 		state_machine.transfer("Move")
@@ -105,6 +111,9 @@ func move_phys_process(delta : float):
 
 func move_exit():
 	c_body.velocity.x = 0
+	
+func land():
+	_land.emit()
 
 func jump_enter():
 	jumping = true

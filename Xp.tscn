@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://4ly8f0dkcr5i"]
+
+[ext_resource type="Script" uid="uid://dovg00rvwu4xc" path="res://Xp.gd" id="1_2ju2y"]
+[ext_resource type="Texture2D" uid="uid://b80dfmjv1vjou" path="res://Assets/CANDY.png" id="2_vt6np"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ju2y"]
+radius = 5.54207
+height = 34.8438
+
+[node name="XP" type="Area2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_2ju2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 18)
+rotation = 0.764454
+scale = Vector2(4, 2.067)
+shape = SubResource("CapsuleShape2D_2ju2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -7)
+scale = Vector2(4, 4)
+texture = ExtResource("2_vt6np")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

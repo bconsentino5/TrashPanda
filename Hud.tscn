@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkn2drlwof8tw"]
+
+[ext_resource type="Script" uid="uid://lkhgv6irdhfy" path="res://Hud.gd" id="1_d4yu0"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_d4yu0")
+
+[node name="xpLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "XP: 0"

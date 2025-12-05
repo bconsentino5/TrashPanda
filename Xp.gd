@@ -1,5 +1,9 @@
 extends Area2D
+class_name _XP
 
+signal update_xp
 
 func _on_body_entered(body: Node2D) -> void:
-	print("+1 xp")
+	if body.name == "Player":
+		self.queue_free()
+		update_xp.emit(1)
