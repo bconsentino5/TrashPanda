@@ -129,9 +129,8 @@ sprite_frames = SubResource("SpriteFrames_1ggq4")
 animation = &"jump"
 frame_progress = 0.00611597
 
-[node name="Effects" type="Node" parent="." node_paths=PackedStringArray("sprite", "speaker")]
+[node name="Effects" type="Node" parent="." node_paths=PackedStringArray("speaker")]
 script = ExtResource("2_oansn")
-sprite = NodePath("")
 speaker = NodePath("../AudioStreamPlayer")
 debug = true
 
