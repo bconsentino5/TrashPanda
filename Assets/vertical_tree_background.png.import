@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b80dfmjv1vjou"
-path="res://.godot/imported/CANDY.png-baee047a6c4397412a8d58cc86439276.ctex"
+uid="uid://dyanjh1hfeyqr"
+path="res://.godot/imported/vertical_tree_background.png-afb38e859f64307025e041ff8ec92b37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CANDY.png"
-dest_files=["res://.godot/imported/CANDY.png-baee047a6c4397412a8d58cc86439276.ctex"]
+source_file="res://Assets/vertical_tree_background.png"
+dest_files=["res://.godot/imported/vertical_tree_background.png-afb38e859f64307025e041ff8ec92b37.ctex"]
 
 [params]
 

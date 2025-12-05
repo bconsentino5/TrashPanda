@@ -1,6 +1,6 @@
 extends Node
 
-@export var sprite : Sprite2D
+@export var sprite : AnimatedSprite2D
 @export var speaker : AudioStreamPlayer
 @export var debug : bool
 
@@ -73,8 +73,9 @@ func _fall_move() -> void:
 func _land() -> void:
 	if debug: print("Land")
 	if enable_sound && land_sound: play_sound(land_sound)
-	if enable_animation && land_anim: play_animation(land_anim)
+	if enable_animation && land_anim: play_animation(idle_anim)
 	if enable_particals && land_partical: land_partical.emitting = true
+	
 
 func _dash_begin() -> void:
 	if debug: print("Dash Begin")
