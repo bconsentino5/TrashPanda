@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmbs7de7b76cd"]
+
+[ext_resource type="Script" uid="uid://dqft3u5g5y2pb" path="res://Scenes/Settings.gd" id="1_2fv1l"]
+[ext_resource type="Texture2D" uid="uid://bu4j30t61qkdx" path="res://UI/SETTINGS.png" id="2_mx4kw"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fv1l")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(479.461, 320.75)
+scale = Vector2(0.664551, 0.664551)
+texture = ExtResource("2_mx4kw")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 20.0
+offset_right = 919.0
+offset_bottom = 56.0
+flat = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 244.0
+offset_right = 732.0
+offset_bottom = 262.0
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 304.0
+offset_right = 732.0
+offset_bottom = 322.0
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 365.0
+offset_right = 732.0
+offset_bottom = 383.0
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

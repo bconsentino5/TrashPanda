@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://scnhl8fo4c8e"]
+
+[ext_resource type="Script" uid="uid://buvm6omex35od" path="res://Scenes/TitleScreen.gd" id="1_vmg2h"]
+[ext_resource type="Texture2D" uid="uid://pv48t1yhfxse" path="res://UI/START.png" id="2_8l4an"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vmg2h")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(483, 327)
+scale = Vector2(0.673828, 0.673828)
+texture = ExtResource("2_8l4an")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 434.0
+offset_right = 546.0
+offset_bottom = 487.0
+flat = true
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 893.0
+offset_top = 21.0
+offset_right = 928.0
+offset_bottom = 58.0
+flat = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
