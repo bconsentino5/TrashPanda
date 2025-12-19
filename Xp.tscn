@@ -1,11 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://4ly8f0dkcr5i"]
+[gd_scene load_steps=8 format=3 uid="uid://4ly8f0dkcr5i"]
 
 [ext_resource type="Script" uid="uid://dovg00rvwu4xc" path="res://Xp.gd" id="1_2ju2y"]
 [ext_resource type="Texture2D" uid="uid://b80dfmjv1vjou" path="res://Assets/CANDY.png" id="2_vt6np"]
+[ext_resource type="PackedScene" uid="uid://bsjsiysixyjiw" path="res://Scenes/AudioManager.tscn" id="3_vt6np"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ju2y"]
 radius = 5.54207
 height = 34.8438
+
+[sub_resource type="Animation" id="Animation_vt6np"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 18)]
+}
 
 [sub_resource type="Animation" id="Animation_2ju2y"]
 resource_name = "bounce"
@@ -36,33 +64,6 @@ tracks/1/keys = {
 "values": [Vector2(-8, 18), Vector2(-8, 8), Vector2(-8, -2), Vector2(-8, -12), Vector2(-8, -2), Vector2(-8, 8), Vector2(-8, 18)]
 }
 
-[sub_resource type="Animation" id="Animation_vt6np"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, -7)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-8, 18)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bfqww"]
 _data = {
 &"RESET": SubResource("Animation_vt6np"),
@@ -88,5 +89,7 @@ texture = ExtResource("2_vt6np")
 libraries = {
 &"": SubResource("AnimationLibrary_bfqww")
 }
+
+[node name="audioManager" parent="." instance=ExtResource("3_vt6np")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

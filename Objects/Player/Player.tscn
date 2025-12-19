@@ -158,10 +158,9 @@ scale_amount_min = 4.0
 scale_amount_max = 8.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 12.0
+position_smoothing_speed = 10.0
 
 [connection signal="_air_idle" from="MovementController" to="Effects" method="_air_idle"]
 [connection signal="_air_move" from="MovementController" to="Effects" method="_air_move"]

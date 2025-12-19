@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://scnhl8fo4c8e"]
+[gd_scene load_steps=4 format=3 uid="uid://scnhl8fo4c8e"]
 
 [ext_resource type="Script" uid="uid://buvm6omex35od" path="res://Scenes/TitleScreen.gd" id="1_vmg2h"]
 [ext_resource type="Texture2D" uid="uid://pv48t1yhfxse" path="res://UI/START.png" id="2_8l4an"]
+[ext_resource type="PackedScene" uid="uid://bsjsiysixyjiw" path="res://Scenes/AudioManager.tscn" id="4_emot1"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -32,6 +33,8 @@ offset_top = 21.0
 offset_right = 928.0
 offset_bottom = 58.0
 flat = true
+
+[node name="audioManager" parent="." instance=ExtResource("4_emot1")]
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

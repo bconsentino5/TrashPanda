@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmy5biw3civcs"
-path="res://.godot/imported/CollisionShapes.png-1ecfd10e5e57f12f11d0402f4fb20101.ctex"
+path="res://.godot/imported/CollisionShapes.png-0da433e18b08cc105e4f3ea3cd7a69be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CollisionShapes.png"
-dest_files=["res://.godot/imported/CollisionShapes.png-1ecfd10e5e57f12f11d0402f4fb20101.ctex"]
+source_file="res://addons/CollisionShapes.png"
+dest_files=["res://.godot/imported/CollisionShapes.png-0da433e18b08cc105e4f3ea3cd7a69be.ctex"]
 
 [params]
 

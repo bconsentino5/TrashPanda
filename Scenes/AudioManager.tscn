@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsjsiysixyjiw"]
+
+[ext_resource type="Script" uid="uid://dru5iwk87g471" path="res://Node2d.gd" id="1_2nh25"]
+[ext_resource type="AudioStream" uid="uid://dfprllbdqlrxe" path="res://Assets/Sound/Free Sounds Pack/Interface 3-3.wav" id="2_d16gy"]
+[ext_resource type="AudioStream" uid="uid://cn06uty8s3pxb" path="res://Assets/Sound/Free Sounds Pack/Special Collectible 26-1.wav" id="3_er85w"]
+
+[node name="audioManager" type="Node2D"]
+script = ExtResource("1_2nh25")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d16gy")
+volume_db = 24.0
+
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_er85w")
+volume_db = 10.191
+max_polyphony = 10

@@ -2,6 +2,7 @@ extends Node2D
 
 @export var xp_scene: PackedScene
 
+@onready var music = $music
 
 func _ready():
 	make_xp(54, 186)
